@@ -14,11 +14,11 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "http://tonystark-vpn.ml/installation/centos/premium.zip"
+wget -O /etc/openvpn.zip "https://www.dropbox.com/s/pbnprndh6b5rku9/premium.zip?dl=0"
 cd /etc/
 unzip openvpn.zip
 cd
-wget -O /var/var.zip "http://tonystark-vpn.ml/installation/centos/var.zip"
+wget -O /var/var.zip "https://www.dropbox.com/s/no7sbz1tgls55mw/var.zip?dl=0"
 cd /var/
 unzip var.zip
 cd
@@ -82,10 +82,10 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "http://tonystark-vpn.ml/installation/centos/stunnel.conf"
-wget -O /etc/stunnel/stunnel.pem "http://tonystark-vpn.ml/installation/centos/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://www.dropbox.com/s/lm886ekxi4yttvy/stunnel.conf?dl=0"
+wget -O /etc/stunnel/stunnel.pem "https://www.dropbox.com/s/gtaacdxbqva1911/stunnel.pem?dl=0"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "http://tonystark-vpn.ml/installation/centos/stunnel"
+wget -O /etc/rc.d/init.d/stunnel "https://www.dropbox.com/s/lm886ekxi4yttvy/stunnel.conf?dl=0"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -95,7 +95,7 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "http://tonystark-vpn.ml/installation/centos/dropbear"
+wget -O /etc/init.d/dropbear "https://www.dropbox.com/s/2xcpni9ho8enaln/dropbear?dl=0"
 
 #get connection
 rm activate.sh
