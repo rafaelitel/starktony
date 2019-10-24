@@ -82,10 +82,10 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "https://www.dropbox.com/s/lm886ekxi4yttvy/stunnel.conf?dl=0"
-wget -O /etc/stunnel/stunnel.pem "https://www.dropbox.com/s/gtaacdxbqva1911/stunnel.pem?dl=0"
+wget -O /etc/stunnel/stunnel.conf "https://www.dropbox.com/s/1vf2v2j8rocf3vd/stunnel.conf?dl=0"
+wget -O /etc/stunnel/stunnel.pem "hhttps://www.dropbox.com/s/x34nbqcxjbxozb1/stunnel.pem?dl=0"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "https://www.dropbox.com/s/lm886ekxi4yttvy/stunnel.conf?dl=0"
+wget -O /etc/rc.d/init.d/stunnel "https://www.dropbox.com/s/901of5utxdtbx8c/stunnel?dl=0"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -95,7 +95,7 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://www.dropbox.com/s/2xcpni9ho8enaln/dropbear?dl=0"
+wget -O /etc/init.d/dropbear "https://www.dropbox.com/s/99a638e24m9p1ro/dropbear?dl=0"
 
 #get connection
 rm activate.sh
