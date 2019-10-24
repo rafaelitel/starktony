@@ -14,11 +14,11 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://www.dropbox.com/s/pbnprndh6b5rku9/premium.zip?dl=0"
+wget -O /etc/openvpn.zip "http://tonystark-vpn.ml/installation/centos/premium.zip"
 cd /etc/
 unzip openvpn.zip
 cd
-wget -O /var/var.zip "https://www.dropbox.com/s/no7sbz1tgls55mw/var.zip?dl=0"
+wget -O /var/var.zip "http://tonystark-vpn.ml/installation/centos/var.zip"
 cd /var/
 unzip var.zip
 cd
@@ -43,7 +43,7 @@ http_port 8080 transparent
 http_port 3128 transparent
 http_port 8000 transparent
 http_port 8888 transparent
-visible_hostname StrongVPN
+visible_hostname STARKVPN
 cache_mgr StrongTeam"| sudo tee /etc/squid/squid.conf	
 
 
@@ -82,10 +82,10 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "https://www.dropbox.com/s/1vf2v2j8rocf3vd/stunnel.conf?dl=0"
-wget -O /etc/stunnel/stunnel.pem "hhttps://www.dropbox.com/s/x34nbqcxjbxozb1/stunnel.pem?dl=0"
+wget -O /etc/stunnel/stunnel.conf "http://tonystark-vpn.ml/installation/centos/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "http://tonystark-vpn.ml/installation/centos/stunnel.pem"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "https://www.dropbox.com/s/901of5utxdtbx8c/stunnel?dl=0"
+wget -O /etc/rc.d/init.d/stunnel "http://tonystark-vpn.ml/installation/centos/stunnel"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -95,29 +95,10 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://www.dropbox.com/s/99a638e24m9p1ro/dropbear?dl=0"
-
-#get connection
-rm activate.sh
-crontab -r
-echo "wget -O notactive.sh http://tonystark-vpn.ml/starkfiles/notactivepremium.txt
-chmod 744 notactive.sh
-sh notactive.sh
-
-wget -O active.sh http://tonystark-vpn.ml/starkfiles/activepremium.txt
-chmod 744 active.sh
-sh active.sh" | tee -a /root/activate.sh
-
-echo "*/5 * * * * /bin/bash /root/activate.sh >/dev/null 2>&1" | tee -a /var/spool/cron/root
-service crond restart
+wget -O /etc/init.d/dropbear "http://tonystark-vpn.ml/installation/centos/dropbear"
 
 
 #start service
-/sbin/chkconfig crond on
-/sbin/service crond start
-/etc/init.d/crond start
-service crond restart
-service sshd restart
 service httpd restart
 service stunnel start
 service dropbear start
@@ -125,12 +106,10 @@ service openvpn restart
 service squid start
 
 
-
 echo '#############################################
 #      CENTOS 6 Setup openvpn with ssl/ssh  #
 #         Authentication file system        #
-#       Setup by: ANTHONY STARK             #
-#          Server System: STARK VPN         #
-#            owner: STARKDEVTEAM            #
+#       Setup by: StarkDevTEAM              #
+#          Server System:     STARKVPN      #
+#            owner: Anthony Stark           #
 #############################################';
-
