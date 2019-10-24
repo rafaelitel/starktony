@@ -44,7 +44,7 @@ http_port 3128 transparent
 http_port 8000 transparent
 http_port 8888 transparent
 visible_hostname STARKVPN
-cache_mgr StrongTeam"| sudo tee /etc/squid/squid.conf	
+cache_mgr STARKDEVTEAM"| sudo tee /etc/squid/squid.conf	
 
 
 sudo /sbin/iptables -L -nsudo /sbin/iptables -L -n
