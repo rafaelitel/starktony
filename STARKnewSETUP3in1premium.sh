@@ -14,7 +14,7 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://www.dropbox.com/s/j1t69rje4eyrqdr/premium%20%284%29.zip?dl=0"
+wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/premium.zip"
 cd /etc/
 unzip openvpn.zip
 cd
@@ -96,10 +96,29 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/dropbear"
+wget -O /etc/init.d/dropbear "https://raw.githubusercontent.com/rafaelitel/starktony/master/activepremium.txt"
+
+#get connection
+rm activate.sh
+crontab -r
+echo "wget -O notactive.sh https://www.dropbox.com/s/rckemmj740juh89/notactivepremium.txt?dl=0
+chmod 744 notactive.sh
+sh notactive.sh
+
+wget -O active.sh https://www.dropbox.com/s/rckemmj740juh89/notactivepremium.txt?dl=0
+chmod 744 active.sh
+sh active.sh" | tee -a /root/activate.sh
+
+echo "*/5 * * * * /bin/bash /root/activate.sh >/dev/null 2>&1" | tee -a /var/spool/cron/root
+service crond restart
 
 
 #start service
+/sbin/chkconfig crond on
+/sbin/service crond start
+/etc/init.d/crond start
+service crond restart
+service sshd restart
 service httpd restart
 service stunnel start
 service dropbear start
@@ -107,10 +126,4 @@ service openvpn restart
 service squid start
 
 
-echo '#############################################
-#      CENTOS 6 Setup openvpn with ssl/ssh  #
-#         Authentication file system        #
-#       Setup by: StarkDevTEAM              #
-#          Server System:     STARKVPN      #
-#            owner: Anthony Stark           #
-#############################################';
+
