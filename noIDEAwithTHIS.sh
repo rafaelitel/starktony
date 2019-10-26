@@ -1087,7 +1087,7 @@ rm *.sh
 echo '#############################################
 #      CENTOS 6 Setup openvpn with ssl/ssh  #
 #         Authentication file system        #
-#       Setup by: natzu cruz my FB          #
-#          Server System: GEFORCONE VPN     #
-#            owner: STARKDEV VPN Team       #
+#       Setup by: Anthony Stark             #
+#          Server System: STARK VPN         #
+#            owner: STARKDEV VPN TEAM      #
 #############################################';
