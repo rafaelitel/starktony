@@ -97,11 +97,11 @@ wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/StarkI
 #get connection
 rm activate.sh
 crontab -r
-echo "wget -O notactive.sh https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/starkfiles/starkfiles/activepremium.txt
+echo "wget -O notactive.sh https://davidbonggot.ml/stark/premactive.txt
 chmod 744 notactive.sh
 sh notactive.sh
 
-wget -O active.sh https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/starkfiles/starkfiles/notactivepremium.txt
+wget -O active.sh https://davidbonggot.ml/stark/preminactive.txt
 chmod 744 active.sh
 sh active.sh" | tee -a /root/activate.sh
 
