@@ -1,37 +1,4 @@
-#!/bin/bash#!/bin/bash
-##
-## Centos6 3in1 Installer
-## By StarkTeam
-##
-
-## Set Local Time
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
-
-## Preparation
-clear
-echo ""
-echo "##"
-echo "##"
-echo "## Server Installer (Centos6)"
-echo "## Powered by StarkTEAM"
-echo "##"
-echo "##"
-echo ""
-echo "Please choose server type"
-echo "1) Premium"
-echo "2) VIP"
-echo "3) Private"
-echo ""
-read -p "> " -e type
-
-if [  $type = "1"  ]; then
-      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/premium.zip"
-elif [  $type = "2"  ]; then
-      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/vip.zip"
-elif [  $type = "3"  ]; then
-      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/private.zip"
-elif [  $type = ""  ]; then
-      exit
+#!/bin/bash
 
 #set localtime
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
@@ -43,6 +10,11 @@ yum install unzip -y
 yum update -y
 rm /etc/sysctl.conf
 
+# get file
+wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/premium.zip"
+cd /etc/
+unzip openvpn.zip
+cd
 wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/var.zip"
 cd /var/
 unzip var.zip
