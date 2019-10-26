@@ -11,8 +11,7 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://uc481e635ad9980134310d03d903.dl.dropboxusercontent.com/cd/0/get/ArIEwH32YxBsBlEivceZygymkBuFo4SbayoJWjV_M97-xUd83cNdF5qtC-DyeDq09SFsiz2xyiwYFNeR-SQGM3E38VabYc57F8WJzSxnxtZe7iDLxX0PvbtcaczGn6FofnY/file?dl=1#"
-cd /etc/
+wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/premium.zip
 unzip openvpn.zip
 cd
 wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/var.zip"
