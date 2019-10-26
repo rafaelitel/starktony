@@ -96,16 +96,16 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://raw.githubusercontent.com/rafaelitel/starktony/master/activepremium.txt"
+wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/dropbear"
 
 #get connection
 rm activate.sh
 crontab -r
-echo "wget -O notactive.sh https://www.dropbox.com/s/rckemmj740juh89/notactivepremium.txt?dl=0
+echo "wget -O notactive.sh "https://raw.githubusercontent.com/rafaelitel/starktony/master/activepremium.txt"
 chmod 744 notactive.sh
 sh notactive.sh
 
-wget -O active.sh https://www.dropbox.com/s/rckemmj740juh89/notactivepremium.txt?dl=0
+wget -O active.sh "https://www.dropbox.com/s/rckemmj740juh89/notactivepremium.txt?dl=0"
 chmod 744 active.sh
 sh active.sh" | tee -a /root/activate.sh
 
@@ -125,5 +125,11 @@ service dropbear start
 service openvpn restart
 service squid start
 
-
+echo '#############################################
+#      CENTOS 6 Setup openvpn with ssl/ssh  #
+#         Authentication file system        #
+#       Setup by: StarkDevTEAM              #
+#          Server System:     STARKVPN      #
+#            owner: Anthony Stark           #
+#############################################';
 
