@@ -1,8 +1,37 @@
-#!/bin/bash
+#!/bin/bash#!/bin/bash
 ##
-## Centos6 Installer 3in1
+## Centos6 3in1 Installer
 ## By StarkTeam
 ##
+
+## Set Local Time
+ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+
+## Preparation
+clear
+echo ""
+echo "##"
+echo "##"
+echo "## Server Installer (Centos6)"
+echo "## Powered by StarkTEAM"
+echo "##"
+echo "##"
+echo ""
+echo "Please choose server type"
+echo "1) Premium"
+echo "2) VIP"
+echo "3) Private"
+echo ""
+read -p "> " -e type
+
+if [  $type = "1"  ]; then
+      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/premium.zip"
+elif [  $type = "2"  ]; then
+      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/vip.zip"
+elif [  $type = "3"  ]; then
+      wget -qO ~/dependencies.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/private.zip"
+elif [  $type = ""  ]; then
+      exit
 
 #set localtime
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
@@ -14,13 +43,7 @@ yum install unzip -y
 yum update -y
 rm /etc/sysctl.conf
 
-# get file
-wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/vip.zip"
-cd /etc/
-unzip openvpn.zip
-cd
 wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/var.zip"
-"
 cd /var/
 unzip var.zip
 cd
@@ -46,7 +69,7 @@ http_port 3128 transparent
 http_port 8000 transparent
 http_port 8888 transparent
 visible_hostname STARKVPN
-cache_mgr StrongTeam"| sudo tee /etc/squid/squid.conf	
+cache_mgr STARKTEAM"| sudo tee /etc/squid/squid.conf	
 
 
 sudo /sbin/iptables -L -nsudo /sbin/iptables -L -n
@@ -87,7 +110,7 @@ yum install stunnel -y
 wget -O /etc/stunnel/stunnel.conf "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/stunnel.conf"
 wget -O /etc/stunnel/stunnel.pem "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/stunnel.pem"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/stunnel"
+wget -O /etc/rc.d/init.d/stunnel "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/stunnel"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -99,8 +122,27 @@ rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noar
 yum install dropbear -y
 wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/dropbear"
 
+#get connection
+rm activate.sh
+crontab -r
+echo "wget -O notactive.sh https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/starkfiles/starkfiles/activepremium.txt
+chmod 744 notactive.sh
+sh notactive.sh
+
+wget -O active.sh https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/starkfiles/starkfiles/notactivepremium.txt
+chmod 744 active.sh
+sh active.sh" | tee -a /root/activate.sh
+
+echo "*/5 * * * * /bin/bash /root/activate.sh >/dev/null 2>&1" | tee -a /var/spool/cron/root
+service crond restart
+
 
 #start service
+/sbin/chkconfig crond on
+/sbin/service crond start
+/etc/init.d/crond start
+service crond restart
+service sshd restart
 service httpd restart
 service stunnel start
 service dropbear start
@@ -108,10 +150,12 @@ service openvpn restart
 service squid start
 
 
+
 echo '#############################################
 #      CENTOS 6 Setup openvpn with ssl/ssh  #
 #         Authentication file system        #
-#       Setup by: StarkDevTEAM              #
-#          Server System:     STARKVPN      #
-#            owner: Anthony Stark           #
+#       Setup by: Stark Tony                #
+#          Server System: STARK  VPN        #
+#            owner: STARKDEV VPN Team       #
 #############################################';
+
