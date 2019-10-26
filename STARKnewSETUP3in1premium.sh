@@ -14,7 +14,7 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/premium.zip"
+wget -O /etc/openvpn.zip "https://www.dropbox.com/s/j1t69rje4eyrqdr/premium%20%284%29.zip?dl=0"
 cd /etc/
 unzip openvpn.zip
 cd
