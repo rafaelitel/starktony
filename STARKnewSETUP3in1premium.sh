@@ -18,7 +18,7 @@ wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/starkinsta
 cd /etc/
 unzip openvpn.zip
 cd
-wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/var.zip
+wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/var.zip"
 "
 cd /var/
 unzip var.zip
