@@ -15,11 +15,11 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/vip.zip"
+wget -O /etc/openvpn.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/vip.zip"
 cd /etc/
 unzip openvpn.zip
 cd
-wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/var.zip
+wget -O /var/var.zip "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/var.zip"
 "
 cd /var/
 unzip var.zip
@@ -84,8 +84,8 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/stunnel.conf"
-wget -O /etc/stunnel/stunnel.pem "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/stunnel.pem"
 chown nobody:nobody /var/run/stunnel
 wget -O /etc/rc.d/init.d/stunnel "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/stunnel"
 chmod 744 /etc/rc.d/init.d/stunnel
@@ -97,7 +97,7 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/starkinstallation/auto-setup/dropbear"
+wget -O /etc/init.d/dropbear "https://anthonystarkvpnml.000webhostapp.com/StarkInstallationfolder/StarkSLLsetup/dropbear"
 
 
 #start service
