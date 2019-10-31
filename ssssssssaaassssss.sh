@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script Created by StarkDevTEAM <https://web.facebook.com/richel.ma.asawako>
+# Script Created by STARKDEVTEAM <https://www.facebook.com/richel.ma.asawako>
 
 # extract ip address
 if [ -z "$1" ]; then
@@ -8,13 +8,13 @@ clear
 echo
 echo "Error: Payload not found! Please execute again with payload."
 echo
-echo "Example: $0<space><connect.facebook.net>"
+echo "Example: $0<space><payloadhere>"
 echo
 echo "or execute the command like this."
 echo
-echo "$0 connect.facebook.net"
+echo "$0 m.facebook.com"
 echo
-echo "Note: connect.facebook.net payload is example."
+echo "Note: m.facebook.com payload is example."
 echo
 else
 IPADDRESS=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{print $1}' | head -1`
@@ -61,66 +61,48 @@ squidport1='8989';
 squidport2='8000';
 ##certificates
 cacert='-----BEGIN CERTIFICATE-----
-MIIE5TCCA82gAwIBAgIJAP0GLynOqm38MA0GCSqGSIb3DQEBCwUAMIGnMQswCQYD
-VQQGEwJQSDERMA8GA1UECBMIQmF0YW5nYXMxETAPBgNVBAcTCEJhdGFuZ2FzMRIw
-EAYDVQQKEwlTYXZhZ2VWUE4xEjAQBgNVBAsTCVNhdmFnZVZQTjEWMBQGA1UEAxMN
-c2F2YWdlLXZwbi50azEPMA0GA1UEKRMGc2VydmVyMSEwHwYJKoZIhvcNAQkBFhJz
-YXZhZ2U5OUBnbWFpbC5jb20wHhcNMTgwNDIwMDQ1MTMyWhcNMjgwNDE3MDQ1MTMy
-WjCBpzELMAkGA1UEBhMCUEgxETAPBgNVBAgTCEJhdGFuZ2FzMREwDwYDVQQHEwhC
-YXRhbmdhczESMBAGA1UEChMJU2F2YWdlVlBOMRIwEAYDVQQLEwlTYXZhZ2VWUE4x
-FjAUBgNVBAMTDXNhdmFnZS12cG4udGsxDzANBgNVBCkTBnNlcnZlcjEhMB8GCSqG
-SIb3DQEJARYSc2F2YWdlOTlAZ21haWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOC
-AQ8AMIIBCgKCAQEAwMNjUVNKJvcMBAx5k/doMtYwVhoSV2gnxA16rtZMnkckHRQc
-ApvgSWOBc0e2OgL+rlb48BrheyQ9aSLiHrfGPvzpVQfpGCwSQxayEiNKdRmlb6wl
-IIlnhfXyKYXx9x/fZNQWGmhczckrXl84ZYbLKglmnfXSEM0PUlfj7pujjXSsZTPV
-2Pe92+sf/2ZyYotA2XXqnXIPjaPUo/kQYqmLTSY7weaYLisxn9TTJo6V0Qap2poY
-FLpH7fjWCTun7jZ5CiWVIVARkZRXmurLlu+Z+TMlPK3DW9ASXA2gw8rctsoyLJym
-V+6hkZiJ3k0X17SNIDibDG4vn8VFEFehOrqKXQIDAQABo4IBEDCCAQwwHQYDVR0O
-BBYEFDC3ZJF7tPbQ9SUDMm6P0hxXmvNIMIHcBgNVHSMEgdQwgdGAFDC3ZJF7tPbQ
-9SUDMm6P0hxXmvNIoYGtpIGqMIGnMQswCQYDVQQGEwJQSDERMA8GA1UECBMIQmF0
-YW5nYXMxETAPBgNVBAcTCEJhdGFuZ2FzMRIwEAYDVQQKEwlTYXZhZ2VWUE4xEjAQ
-BgNVBAsTCVNhdmFnZVZQTjEWMBQGA1UEAxMNc2F2YWdlLXZwbi50azEPMA0GA1UE
-KRMGc2VydmVyMSEwHwYJKoZIhvcNAQkBFhJzYXZhZ2U5OUBnbWFpbC5jb22CCQD9
-Bi8pzqpt/DAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQCdv9MOSR8O
-b9wRw4qd681eTxUYEACFVZpY3eK3vJYyGtblYHIwfCPTWL6yXQxbMud4C1ISIwel
-UFv/qnz/GZmAkN0qB5tNSvB48123F1AWfhhXWG+o+xWxUi+eqsXdUVZ1tpP5WQaH
-EUtU6SZ1AXO6l6b/RTXymRrEInCPfbGsEnucnG7naOpBaNRXmpiMppOwzR42sd6I
-QOvXkj2e8v9tQ05cffjexks+rfb/d80+1nfkv0HCLWxcdU8yOUqVryhdZLB6Rhw/
-crldSHwrGWN+qptpFD160iJLIv3p5vWwUAgRoRai9iHuJMOHn4aDX0N8tbCfS+R5
-qn8GWiHaXEu8
+MIIDXDCCAsWgAwIBAgIJAIeyMb72wnZ5MA0GCSqGSIb3DQEBBQUAMH0xCzAJBgNV
+BAYTAlBIMRAwDgYDVQQIEwdaZWRkVlBOMQ8wDQYDVQQHEwZNQU5JTEExEDAOBgNV
+BAoTB1plZGRWUE4xEzARBgNVBAMTClplZGRWUE4gQ0ExJDAiBgkqhkiG9w0BCQEW
+FVplZGRWUE4yMDE3QGdtYWlsLmNvbTAeFw0xNzEwMjQxNTA3NDhaFw0yNzEwMjIx
+NTA3NDhaMH0xCzAJBgNVBAYTAlBIMRAwDgYDVQQIEwdaZWRkVlBOMQ8wDQYDVQQH
+EwZNQU5JTEExEDAOBgNVBAoTB1plZGRWUE4xEzARBgNVBAMTClplZGRWUE4gQ0Ex
+JDAiBgkqhkiG9w0BCQEWFVplZGRWUE4yMDE3QGdtYWlsLmNvbTCBnzANBgkqhkiG
+9w0BAQEFAAOBjQAwgYkCgYEAucyfZTELp1YY2fW1nxpjkYkplzJkWoqfEWQ2YUef
+ZLIyY7pXGsnAKq+oN8kw4pJks4quC3mM7wTRC45VanKdkvSM5tgTwFFS8fA2s6Sg
+5Nr9NoILlRK6K0tVb8g6KsXW+kzWgMUREWVHtQ+0pLK9b1K4tZx0/nHOpsigO11/
+4lkCAwEAAaOB4zCB4DAdBgNVHQ4EFgQUpdCYQGiszZrdphE3R17mtIyybMwwgbAG
+A1UdIwSBqDCBpYAUpdCYQGiszZrdphE3R17mtIyybMyhgYGkfzB9MQswCQYDVQQG
+EwJQSDEQMA4GA1UECBMHWmVkZFZQTjEPMA0GA1UEBxMGTUFOSUxBMRAwDgYDVQQK
+EwdaZWRkVlBOMRMwEQYDVQQDEwpaZWRkVlBOIENBMSQwIgYJKoZIhvcNAQkBFhVa
+ZWRkVlBOMjAxN0BnbWFpbC5jb22CCQCHsjG+9sJ2eTAMBgNVHRMEBTADAQH/MA0G
+CSqGSIb3DQEBBQUAA4GBAC0QvhRhIBCTRPZ7EDgAujMVZW5iIYZYfGfC7JMZJv6j
+3nwt1EDea1rYkuphSiX1G04o1ZDLFt3JuIFrs4N+NIVdVt06x7M75Re6ZYu3gTFS
+XPA2jNn5vBm+Fi6x4kgFQPigngq3G44fvMJwTUubViWJ2EAb5FmgPG6zJdSLG+g5
 -----END CERTIFICATE-----';
 servercert='Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number: 1 (0x1)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=PH, ST=Batangas, L=Batangas, O=SavageVPN, OU=SavageVPN, CN=savage-vpn.tk/name=server/emailAddress=savage99@gmail.com
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=PH, ST=ZeddVPN, L=MANILA, O=ZeddVPN, CN=ZeddVPN CA/emailAddress=ZeddVPN2017@gmail.com
         Validity
-            Not Before: Apr 20 04:53:44 2018 GMT
-            Not After : Apr 17 04:53:44 2028 GMT
-        Subject: C=PH, ST=Batangas, L=Batangas, O=SavageVPN, OU=SavageVPN, CN=savage-vpn.tk/name=server/emailAddress=savage99@gmail.com
+            Not Before: Oct 24 15:08:07 2017 GMT
+            Not After : Oct 22 15:08:07 2027 GMT
+        Subject: C=PH, ST=ZeddVPN, L=MANILA, O=ZeddVPN, CN=server/emailAddress=ZeddVPN2017@gmail.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
+                Public-Key: (1024 bit)
                 Modulus:
-                    00:b6:a9:b9:e6:f9:19:85:24:ba:6b:dc:7e:b2:d4:
-                    2c:01:46:26:fa:3e:41:ee:0c:b9:18:27:99:34:27:
-                    61:eb:4f:cb:83:c0:0b:43:27:05:53:a5:b9:3c:5a:
-                    8a:c5:7e:2e:72:1d:f9:83:97:44:b5:00:21:36:d7:
-                    51:27:be:b7:d0:0c:2c:09:38:52:a0:e0:89:6f:cb:
-                    0e:11:37:d9:7c:43:fe:b1:25:c1:2f:78:25:c1:a0:
-                    15:c9:1d:35:b6:1d:33:e9:e6:75:83:4b:30:54:a4:
-                    4e:f5:01:ae:fc:0c:37:c0:c7:07:43:4c:04:50:80:
-                    c8:13:9a:27:4c:d1:6d:c6:87:e4:38:38:67:c1:87:
-                    e4:3a:e3:79:11:c1:23:d4:2c:72:b7:0c:60:72:c7:
-                    29:7e:36:17:09:2d:ca:9d:b3:49:2f:2f:56:85:a9:
-                    24:34:5a:e7:eb:4b:ee:cf:43:bb:20:ef:dc:26:95:
-                    e6:dd:3a:8a:61:d8:33:b0:28:0f:fb:ce:d9:db:dd:
-                    ca:2f:85:f0:ec:66:58:67:77:8e:e0:a0:21:f8:b5:
-                    fe:e3:02:7e:3c:9c:5c:91:65:1a:bc:3c:6f:ce:3d:
-                    b8:38:8e:b0:d4:5b:ef:a5:e1:b3:0c:f4:bf:49:95:
-                    7b:1f:9f:41:9f:ce:fa:ae:e1:e7:68:f4:f9:a6:99:
-                    74:95
+                    00:d8:4f:bb:85:7c:d0:31:9c:b2:78:20:c7:8f:54:
+                    28:54:da:89:f9:59:3c:40:ef:2d:ef:05:95:5d:c8:
+                    c8:63:db:fa:e9:c0:b8:40:6e:84:11:60:3c:69:f4:
+                    eb:32:a9:30:ce:fa:8e:11:7c:cc:79:4a:66:1d:c3:
+                    25:63:21:76:4e:83:2b:7e:95:90:88:fa:94:91:16:
+                    f3:47:a0:4f:e0:b2:45:d1:f4:92:16:43:81:95:fe:
+                    fe:f1:61:b8:d7:35:bb:cc:14:c7:1c:78:4d:54:09:
+                    92:d2:b0:8a:f0:9f:bc:e3:c8:52:56:ff:9f:73:4a:
+                    8e:34:3a:8c:40:28:4d:0e:6b
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Basic Constraints: 
@@ -130,100 +112,67 @@ servercert='Certificate:
             Netscape Comment: 
                 Easy-RSA Generated Server Certificate
             X509v3 Subject Key Identifier: 
-                0C:4B:B3:78:75:C7:5E:C8:16:D2:A7:BC:8E:15:3F:33:E3:58:19:04
+                D2:75:59:CF:0E:1F:65:F2:04:7E:2F:B5:B2:F3:FE:16:B3:94:4F:CA
             X509v3 Authority Key Identifier: 
-                keyid:30:B7:64:91:7B:B4:F6:D0:F5:25:03:32:6E:8F:D2:1C:57:9A:F3:48
-                DirName:/C=PH/ST=Batangas/L=Batangas/O=SavageVPN/OU=SavageVPN/CN=savage-vpn.tk/name=server/emailAddress=savage99@gmail.com
-                serial:FD:06:2F:29:CE:AA:6D:FC
+                keyid:A5:D0:98:40:68:AC:CD:9A:DD:A6:11:37:47:5E:E6:B4:8C:B2:6C:CC
+                DirName:/C=PH/ST=ZeddVPN/L=MANILA/O=ZeddVPN/CN=ZeddVPN CA/emailAddress=ZeddVPN2017@gmail.com
+                serial:87:B2:31:BE:F6:C2:76:79
 
             X509v3 Extended Key Usage: 
                 TLS Web Server Authentication
             X509v3 Key Usage: 
                 Digital Signature, Key Encipherment
-            X509v3 Subject Alternative Name: 
-                DNS:server
-    Signature Algorithm: sha256WithRSAEncryption
-         95:13:80:8a:95:42:9e:16:b6:58:5f:4a:d2:74:61:fb:25:04:
-         3c:77:fa:09:41:05:e3:9b:df:93:4e:65:8e:b8:05:87:35:c0:
-         9a:eb:62:fa:16:0d:15:28:79:b7:7f:8c:55:72:7a:31:16:3f:
-         ff:ba:29:70:0c:96:78:6e:1e:a9:ff:42:d7:f2:53:43:e6:f3:
-         a4:3a:02:7b:85:18:18:bc:b6:56:47:3b:be:ae:6f:1c:93:8b:
-         13:55:0d:b1:51:30:c2:f4:03:c9:a9:cf:bb:ad:60:70:ec:32:
-         1e:e5:74:d5:4d:2b:5e:02:73:28:b0:84:28:f4:6c:93:45:a1:
-         f8:3c:58:91:38:21:7b:b2:8f:fe:26:4c:18:72:a3:13:79:46:
-         b8:43:8c:cc:5c:03:7c:20:8a:51:25:8b:d0:80:a8:ae:33:5c:
-         19:20:f6:a9:02:39:47:42:1d:37:c6:ec:9f:6e:80:5b:61:0b:
-         53:bf:26:4b:6d:b5:a6:98:21:e0:ad:42:3a:7d:3f:c9:00:a3:
-         61:4c:76:e0:45:36:0b:7e:71:38:37:4f:73:a9:6f:bf:7a:77:
-         04:8d:27:cb:e3:d4:11:f4:c3:c5:85:c2:1d:8a:9f:3b:da:43:
-         97:8d:f3:3e:30:51:b4:ad:2b:65:04:58:f3:95:7f:23:b2:3a:
-         f8:bd:7c:f8
+    Signature Algorithm: sha1WithRSAEncryption
+         17:b9:23:84:8e:96:47:d0:5e:7f:bd:38:c3:77:93:21:a7:a9:
+         12:f6:7f:c7:c7:0c:02:a0:72:53:b7:d5:82:6f:d4:3c:94:3d:
+         79:2d:69:e1:20:a6:11:09:3f:c7:d0:ef:e6:51:48:e8:81:39:
+         e4:58:7c:d7:12:89:79:64:e3:3f:2d:46:2e:d3:c2:29:cf:ed:
+         13:70:81:d2:fe:18:ee:c2:8a:fd:6c:63:9a:d2:81:65:9c:9d:
+         c4:20:28:bc:d3:15:c2:80:80:d9:42:ae:9f:19:80:70:48:5e:
+         f6:6c:92:46:84:d2:ec:4e:ae:bb:60:46:40:fb:58:39:35:0e:
+         b0:bd
 -----BEGIN CERTIFICATE-----
-MIIFWDCCBECgAwIBAgIBATANBgkqhkiG9w0BAQsFADCBpzELMAkGA1UEBhMCUEgx
-ETAPBgNVBAgTCEJhdGFuZ2FzMREwDwYDVQQHEwhCYXRhbmdhczESMBAGA1UEChMJ
-U2F2YWdlVlBOMRIwEAYDVQQLEwlTYXZhZ2VWUE4xFjAUBgNVBAMTDXNhdmFnZS12
-cG4udGsxDzANBgNVBCkTBnNlcnZlcjEhMB8GCSqGSIb3DQEJARYSc2F2YWdlOTlA
-Z21haWwuY29tMB4XDTE4MDQyMDA0NTM0NFoXDTI4MDQxNzA0NTM0NFowgacxCzAJ
-BgNVBAYTAlBIMREwDwYDVQQIEwhCYXRhbmdhczERMA8GA1UEBxMIQmF0YW5nYXMx
-EjAQBgNVBAoTCVNhdmFnZVZQTjESMBAGA1UECxMJU2F2YWdlVlBOMRYwFAYDVQQD
-Ew1zYXZhZ2UtdnBuLnRrMQ8wDQYDVQQpEwZzZXJ2ZXIxITAfBgkqhkiG9w0BCQEW
-EnNhdmFnZTk5QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
-ggEBALapueb5GYUkumvcfrLULAFGJvo+Qe4MuRgnmTQnYetPy4PAC0MnBVOluTxa
-isV+LnId+YOXRLUAITbXUSe+t9AMLAk4UqDgiW/LDhE32XxD/rElwS94JcGgFckd
-NbYdM+nmdYNLMFSkTvUBrvwMN8DHB0NMBFCAyBOaJ0zRbcaH5Dg4Z8GH5DrjeRHB
-I9QscrcMYHLHKX42Fwktyp2zSS8vVoWpJDRa5+tL7s9DuyDv3CaV5t06imHYM7Ao
-D/vO2dvdyi+F8OxmWGd3juCgIfi1/uMCfjycXJFlGrw8b849uDiOsNRb76Xhswz0
-v0mVex+fQZ/O+q7h52j0+aaZdJUCAwEAAaOCAYswggGHMAkGA1UdEwQCMAAwEQYJ
-YIZIAYb4QgEBBAQDAgZAMDQGCWCGSAGG+EIBDQQnFiVFYXN5LVJTQSBHZW5lcmF0
-ZWQgU2VydmVyIENlcnRpZmljYXRlMB0GA1UdDgQWBBQMS7N4dcdeyBbSp7yOFT8z
-41gZBDCB3AYDVR0jBIHUMIHRgBQwt2SRe7T20PUlAzJuj9IcV5rzSKGBraSBqjCB
-pzELMAkGA1UEBhMCUEgxETAPBgNVBAgTCEJhdGFuZ2FzMREwDwYDVQQHEwhCYXRh
-bmdhczESMBAGA1UEChMJU2F2YWdlVlBOMRIwEAYDVQQLEwlTYXZhZ2VWUE4xFjAU
-BgNVBAMTDXNhdmFnZS12cG4udGsxDzANBgNVBCkTBnNlcnZlcjEhMB8GCSqGSIb3
-DQEJARYSc2F2YWdlOTlAZ21haWwuY29tggkA/QYvKc6qbfwwEwYDVR0lBAwwCgYI
-KwYBBQUHAwEwCwYDVR0PBAQDAgWgMBEGA1UdEQQKMAiCBnNlcnZlcjANBgkqhkiG
-9w0BAQsFAAOCAQEAlROAipVCnha2WF9K0nRh+yUEPHf6CUEF45vfk05ljrgFhzXA
-muti+hYNFSh5t3+MVXJ6MRY//7opcAyWeG4eqf9C1/JTQ+bzpDoCe4UYGLy2Vkc7
-vq5vHJOLE1UNsVEwwvQDyanPu61gcOwyHuV01U0rXgJzKLCEKPRsk0Wh+DxYkTgh
-e7KP/iZMGHKjE3lGuEOMzFwDfCCKUSWL0ICorjNcGSD2qQI5R0IdN8bsn26AW2EL
-U78mS221ppgh4K1COn0/yQCjYUx24EU2C35xODdPc6lvv3p3BI0ny+PUEfTDxYXC
-HYqfO9pDl43zPjBRtK0rZQRY85V/I7I6+L18+A==
+MIIDujCCAyOgAwIBAgIBATANBgkqhkiG9w0BAQUFADB9MQswCQYDVQQGEwJQSDEQ
+MA4GA1UECBMHWmVkZFZQTjEPMA0GA1UEBxMGTUFOSUxBMRAwDgYDVQQKEwdaZWRk
+VlBOMRMwEQYDVQQDEwpaZWRkVlBOIENBMSQwIgYJKoZIhvcNAQkBFhVaZWRkVlBO
+MjAxN0BnbWFpbC5jb20wHhcNMTcxMDI0MTUwODA3WhcNMjcxMDIyMTUwODA3WjB5
+MQswCQYDVQQGEwJQSDEQMA4GA1UECBMHWmVkZFZQTjEPMA0GA1UEBxMGTUFOSUxB
+MRAwDgYDVQQKEwdaZWRkVlBOMQ8wDQYDVQQDEwZzZXJ2ZXIxJDAiBgkqhkiG9w0B
+CQEWFVplZGRWUE4yMDE3QGdtYWlsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAw
+gYkCgYEA2E+7hXzQMZyyeCDHj1QoVNqJ+Vk8QO8t7wWVXcjIY9v66cC4QG6EEWA8
+afTrMqkwzvqOEXzMeUpmHcMlYyF2ToMrfpWQiPqUkRbzR6BP4LJF0fSSFkOBlf7+
+8WG41zW7zBTHHHhNVAmS0rCK8J+848hSVv+fc0qONDqMQChNDmsCAwEAAaOCAUww
+ggFIMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZAMDQGCWCGSAGG+EIBDQQn
+FiVFYXN5LVJTQSBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmljYXRlMB0GA1UdDgQW
+BBTSdVnPDh9l8gR+L7Wy8/4Ws5RPyjCBsAYDVR0jBIGoMIGlgBSl0JhAaKzNmt2m
+ETdHXua0jLJszKGBgaR/MH0xCzAJBgNVBAYTAlBIMRAwDgYDVQQIEwdaZWRkVlBO
+MQ8wDQYDVQQHEwZNQU5JTEExEDAOBgNVBAoTB1plZGRWUE4xEzARBgNVBAMTClpl
+ZGRWUE4gQ0ExJDAiBgkqhkiG9w0BCQEWFVplZGRWUE4yMDE3QGdtYWlsLmNvbYIJ
+AIeyMb72wnZ5MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDANBgkq
+hkiG9w0BAQUFAAOBgQAXuSOEjpZH0F5/vTjDd5Mhp6kS9n/HxwwCoHJTt9WCb9Q8
+lD15LWnhIKYRCT/H0O/mUUjogTnkWHzXEol5ZOM/LUYu08Ipz+0TcIHS/hjuwor9
+bGOa0oFlnJ3EICi80xXCgIDZQq6fGYBwSF72bJJGhNLsTq67YEZA+1g5NQ6wvQ==
 -----END CERTIFICATE-----';
 serverkey='-----BEGIN PRIVATE KEY-----
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2qbnm+RmFJLpr
-3H6y1CwBRib6PkHuDLkYJ5k0J2HrT8uDwAtDJwVTpbk8WorFfi5yHfmDl0S1ACE2
-11EnvrfQDCwJOFKg4Ilvyw4RN9l8Q/6xJcEveCXBoBXJHTW2HTPp5nWDSzBUpE71
-Aa78DDfAxwdDTARQgMgTmidM0W3Gh+Q4OGfBh+Q643kRwSPULHK3DGByxyl+NhcJ
-Lcqds0kvL1aFqSQ0WufrS+7PQ7sg79wmlebdOoph2DOwKA/7ztnb3covhfDsZlhn
-d47goCH4tf7jAn48nFyRZRq8PG/OPbg4jrDUW++l4bMM9L9JlXsfn0Gfzvqu4edo
-9PmmmXSVAgMBAAECggEAOwhHKDpA4SKpjMpJuAmR3yeI2T7dl81M1F2XyZ8gqiez
-ofSiryUhN5NLdhHc306UPBUr2jc84TIVid+0PqAIT5hfcutc6NkoEZUSCsZ95wci
-fKWy9WBi81yFLeXewehWKrVsLO5TxEcFrXDJ2HMqYYbw9fLPQiUchBlBsjXMwGgG
-W8R2WlQaIh0siJzg+FjwOPEbZA7jAJfyGt80HDWVOfsHxsSX80m8rq2nMppXsngF
-hhosj/f/WOPJLiA+/Odkv1ZXS1rqnr5GuwdzrEnibqXOx9LCuxp9MZ8t6qWDvgUf
-dy1AB2DKRi9s4NCJHPpITXek4ELawLmGxp7KEzQ/0QKBgQDoU16ZGTCVCT/kQlRz
-DRZ2fFXNEvEohCTxYJ72iT6MGxZw+2fuZG6VL9fAgUVLleKKUCFUzM3GPQWEQ1ry
-VKQjIqQZjyR+rzdqbHOcG4qYz93enH0FIB9cW/FiU3m5EAzU+TkagZCFq254Kb7i
-IQzrWTn24jFX1fQkgcNoXbNUMwKBgQDJRtEs/4e/enVs/6iGjjTGltjyXPS3QM/k
-ylZGL+Wc1gQWAsfTO6tYMMPVupyyl2JQjhUydIu3g7D2R4IRKlpprEd8S0MoJou9
-Lp/JudlDDJs9Q6Z2q99JpbXdhJ2aOTmSgOKHnkFQRRP/LOxaNwuE/xuhYWubvtFW
-y9u+B8uMFwKBgQCJuZqTweYWA+S3aUbs6W5OkUjACKGj9ip8WV4DIrtMjWZRVgh3
-v1v63uDVAw1UUKd6fSQ1RDAce+JAVTmd/OVM2uVTLZNh8nc0hNRIT99q1Zdet4A5
-wKA2vV6sfnXjaotg2dmrR/Gn/EfBvmWlYhhpkHyXSeIcgv53geGYhiugFwKBgQC3
-pRmtyOh+2KjTbuDBBHc6yt/fItlVaplE0yismX8S/mJ0As13+fV4XeYQ2Feoy180
-yK6mfpgMNOf9jXkrWE1uJXaD/dekhqbxUd0RHbUR7CqoV1VG6cKtW7j4CMwTryrM
-dTQ7MTW+m4iHRuHP3nFwQ6NeN5kLXat7Wj2AwXQCuQKBgESdvXETE6Oy3GVeO1zd
-tDlYxpA620daYaNo9MDpV49m89Lt8Maou080+gEJDrqqhyiaEQStrvz31mXIA+w7
-YTX1gKAF4qCXy3IKLqN3umdpEYkV2MVEfXlUE6aZZMogta9F5cne3CNDyHzq/RvS
-l9rNm+ntgV3+QioNbRWhG9fb
+MIICeQIBADANBgkqhkiG9w0BAQEFAASCAmMwggJfAgEAAoGBANhPu4V80DGcsngg
+x49UKFTaiflZPEDvLe8FlV3IyGPb+unAuEBuhBFgPGn06zKpMM76jhF8zHlKZh3D
+JWMhdk6DK36VkIj6lJEW80egT+CyRdH0khZDgZX+/vFhuNc1u8wUxxx4TVQJktKw
+ivCfvOPIUlb/n3NKjjQ6jEAoTQ5rAgMBAAECgYEAyEVB4/xEMbrXjdsjiHMtiCpx
+1helbqVDjOpJeXQ8/B+edq+Ep7rqsb+9D4i//b6hvvBBerVmBuI4G1QjGF3RznlO
+zXrVP3I15/cLl/J3CN5vYesGqfyzoXdWiDBxhXcgq9Q7Ya8G0rGQWQXUVkv0ZOpg
+rwzoLY8uwOETDHaW2PECQQDwmVXWS5zPCe0ePgiFfbSFf8SmznbXxxsSUOXTJmzg
+jP0q5WYf/YywuZjCKQu9FTK6rF2en6fHj+J5HSw73hiZAkEA5ihmnfPTp8hy81BN
+H9zjN4bnXlNjH+ncCf1cfLBFE2CoGlUe8CDSXITZ3MZVIMgzNUaEHJ/GjYKe1IRb
+Q+StowJBAMO2FyrQKugHTQiysT/VN0j428BMZkOzxIOrpqeRtDMcvLtuCxqupwkC
+kA4wUUonujI7D5R+jn44vqKCZn70dNECQQDkFfeT4tXG+aPJMrQrtmhKV9ukI7kh
+IE3abIYiX0ElMe2FowN07uHppBKPctFcGmp9CnPUNha7mE20x7H2N4JHAkEA05W5
+hW8kL5ux7r/sn5qpaB4sM3VI/IzcQdYJrEQIvkO/Q/wExT+1ajBoRwr5OC6FBo24
+7zA0lrXYYg30B0RAbw==
 -----END PRIVATE KEY-----';
 dh='-----BEGIN DH PARAMETERS-----
-MIIBCAKCAQEAohzwXz9fsjw+G9Q14qINNOhZnTt/b30zzJYm4o2NIzAngM6E6GPm
-N5USUt0grZw6h3VP9LyqQoGi/bHFz33YFG5lgDF8FAASEh07/leF7s0ohhK8pspC
-JVD+mRatwBrIImXUpJvYI2pXKxtCOnDa2FFjAOHKixiAXqVcmJRwNaSklQcrpXdn
-/09cr0rbFoovn+f1agly4FxYYs7P0XkvSHm3gVW/mhAUr1hvZlbBaWFSVUdgcVOi
-FXQ/AVkvxYaO8pFI2Vh+CNMk7Vvi8d3DTayvoL2HTgFi+OIEbiiE/Nzryu+jDGc7
-79FkBHWOa/7eD2nFrHScUJcwWiSevPQjQwIBAg==
+MIGHAoGBAKmcS1oOzeAt8IVdnQ0GttU2vBADXzJKud0x8X/+d/1K3f83+K2Z9qi8
+2ZaYo8nJsCXCQvoU7oFxYA9A9WQ291UNvLOdDCVo0u6NsCbfF7s9Nk+Yxh40kPmA
+zByKIgWIy/KKWpH7p8HTGL6yWBFHbR77uZghUNXDhEoCant0J+HzAgEC
 -----END DH PARAMETERS-----';
 
 echo 'Initializing please wait..'
@@ -246,7 +195,7 @@ cat << EOF > /etc/openvpn/keys/server.key
 $serverkey
 EOF
 
-cat << EOF > /etc/openvpn/keys/dh2048.pem
+cat << EOF > /etc/openvpn/keys/dh1024.pem
 $dh
 EOF
 
@@ -260,84 +209,34 @@ DB='$dbname'
 PORT='$dbport'
 EOF
 
+/bin/cat <<"EOM" >/etc/openvpn/script/connect.sh
+#!/bin/bash
+. /etc/openvpn/script/config.sh
+##insert data connection to table log
+mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "INSERT INTO log (log_id,user_id,log_trusted_ip,log_trusted_port,log_remote_ip,log_remote_port,log_start_time,log_end_time,log_received,log_send) VALUES(NULL,'$common_name','$trusted_ip','$trusted_port','$ifconfig_pool_remote_ip','$remote_port_1',now(),'0000-00-00 00:00:00','$bytes_received','$bytes_sent')"
+##set status online to user connected
+mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE tbl_user SET user_online=1, connected_at='$trusted_ip' WHERE username='$common_name'"
 
+EOM
 
-echo -e "                $GREEN Type of your Server$RESET"
-PS3='Choose or Type a Plan: '
-options=("Premium" "VIP" "PRIVATE" "Quit")
-select opt in "${options[@]}"; do
-  case "$opt,$REPLY" in
-    Premium,*|*,Premium) 
-    echo "";
-    
-  
+/bin/cat <<"EOM" >/etc/openvpn/script/disconnect.sh
+#!/bin/bash
+. /etc/openvpn/script/config.sh
+##set status offline to user disconnected
+mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE tbl_user SET user_online=0 WHERE username='$common_name'"
+##insert data disconnected to table log
+mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE log SET log_end_time=now(),log_received='$bytes_received',log_send='$bytes_sent' WHERE log_trusted_ip='$trusted_ip' AND log_trusted_port='$trusted_port' AND user_id='$common_name' AND log_end_time='0000-00-00 00:00:00'"
+
+EOM
+
 /bin/cat <<"EOM" >/etc/openvpn/script/login.sh
 #!/bin/bash
 . /etc/openvpn/script/config.sh
+##Authentication
+user_id=$(mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -sN -e "select username from tbl_user where username = '$username' AND subcription in ('Private') AND password = '$password' AND user_enable=1 AND user_online=0 AND (now() <= user_end_date)")
+##Check user
+[ "$user_id" != '' ] && [ "$user_id" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
 
-  
-##PREMIUM##
-PRE="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.duration > 0"
-  
-##VIP##
-VIP="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.vip_duration > 0"
-  
-##PRIVATE##
-PRIV="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration > 0"
-  
-Query="SELECT users.user_name FROM users WHERE $PRE OR $VIP OR $PRIV"
-user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
-  
-[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
-  
-EOM
-  
-echo "";
-echo -e "                $GREEN 1) Premium Selected$RESET";
-break ;;
-VIP,*|*,VIP) 
-echo "";
-  
-/bin/cat <<"EOM" >/etc/openvpn/script/login.sh
-#!/bin/bash
-. /etc/openvpn/script/config.sh
-
-##VIP##
-VIP="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.vip_duration > 0"
-  
-##PRIVATE##
-PRIV="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration > 0"
-  
-Query="SELECT users.user_name FROM users WHERE $VIP OR $PRIV"
-user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
-  
-[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
-EOM
-  
-echo "";
-echo -e "                $GREEN 2) VIP Selected$RESET";
-break ;;
-PRIVATE,*|*,PRIVATE) 
-echo "";
-
-  
-/bin/cat <<"EOM" >/etc/openvpn/script/login.sh
-#!/bin/bash
-. /etc/openvpn/script/config.sh
-
-  
-##PRIVATE##
-PRIVATE="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration>0"
-  
-Query="SELECT users.user_name FROM users WHERE $PRIVATE"
-user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
-  
-[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
-EOM
-  
-echo "";
-echo -e "                $GREEN 3) PRIVATE Selected$RESET";
-break ;;
 EOM
 
 # setting server
@@ -4439,5 +4338,5 @@ echo "~> http://$IPADDRESS/openvpnssl.ovpn - Config with stunnel"
 echo "~> http://$IPADDRESS/stunnel.conf - Stunnel config file"
 echo "~> http://$IPADDRESS/openvpn.tgz - All config"
 echo "######### Download your config files here! #########"
-echo "######### Autoscript by StarkDevTeam #########"
+echo "######### Autoscript by STARKDEVTEAM #########"
 fi
