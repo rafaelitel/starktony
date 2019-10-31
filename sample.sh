@@ -3,19 +3,6 @@
 # Script Created by StarkDevTEAM <https://web.facebook.com/richel.ma.asawako>
 
 # extract ip address
-if [ -z "$1" ]; then
-clear
-echo
-echo "Error: Payload not found! Please execute again with payload."
-echo
-echo "Example: $0<space><connect.facebook.net>"
-echo
-echo "or execute the command like this."
-echo
-echo "$0 connect.facebook.net"
-echo
-echo "Note: connect.facebook.net payload is example."
-echo
 else
 IPADDRESS=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{print $1}' | head -1`
 IPADD="s/ipaddresxxx/$IPADDRESS/g";
