@@ -232,12 +232,29 @@ EOM
 /bin/cat <<"EOM" >/etc/openvpn/script/login.sh
 #!/bin/bash
 . /etc/openvpn/script/config.sh
-##Authentication
-user_id=$(mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -sN -e "select username from tbl_user where username = '$username' AND subcription in ('Private') AND password = '$password' AND user_enable=1 AND user_online=0 AND (now() <= user_end_date)")
-##Check user
-[ "$user_id" != '' ] && [ "$user_id" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
+
+
+##PREMIUM##
+PRE="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.duration > 0"
+
+##VIP##
+VIP="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.vip_duration > 0"
+
+##Private##
+PRIV="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration > 0"
+
+Query="SELECT users.user_name FROM users WHERE $PRE OR $VIP OR $PRIV"
+user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
+
+[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
 
 EOM
+
+echo "";
+echo "1) Premium Selected";
+break ;;
+VIP,*|*,VIP) 
+echo "";
 
 # setting server
 cat << EOF > /etc/openvpn/server.conf
