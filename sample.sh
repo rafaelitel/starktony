@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script Created by Darkraven101 <https://web.facebook.com/richel.ma.asawako>
+# Script Created by StarkDevTeam <https://web.facebook.com/richel.ma.asawako>
 
 # extract ip address
 if [ -z "$1" ]; then
