@@ -8,7 +8,7 @@ clear
 echo
 echo "Error: Payload not found! Please execute again with payload."
 echo
-echo "Example: $0<space><payloadhere>"
+echo "Example: $0<space><connect.facebook.net>"
 echo
 echo "or execute the command like this."
 echo
