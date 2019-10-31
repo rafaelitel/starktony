@@ -246,7 +246,7 @@ cat << EOF > /etc/openvpn/keys/server.key
 $serverkey
 EOF
 
-cat << EOF > /etc/openvpn/keys/dh1024.pem
+cat << EOF > /etc/openvpn/keys/dh2048.pem
 $dh
 EOF
 
@@ -260,26 +260,38 @@ DB='$dbname'
 PORT='$dbport'
 EOF
 
-/bin/cat <<"EOM" >/etc/openvpn/script/connect.sh
+
+
+echo -e "                $GREEN Type of your Server$RESET"
+PS3='Choose or Type a Plan: '
+options=("Premium" "VIP" "PRIVATE" "Quit")
+select opt in "${options[@]}"; do
+  case "$opt,$REPLY" in
+    Premium,*|*,Premium) 
+    echo "";
+    
+  
+/bin/cat <<"EOM" >/etc/openvpn/script/login.sh
 #!/bin/bash
 . /etc/openvpn/script/config.sh
-##insert data connection to table log
-mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "INSERT INTO log (log_id,user_id,log_trusted_ip,log_trusted_port,log_remote_ip,log_remote_port,log_start_time,log_end_time,log_received,log_send) VALUES(NULL,'$common_name','$trusted_ip','$trusted_port','$ifconfig_pool_remote_ip','$remote_port_1',now(),'0000-00-00 00:00:00','$bytes_received','$bytes_sent')"
-##set status online to user connected
-mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE tbl_user SET user_online=1, connected_at='$trusted_ip' WHERE username='$common_name'"
 
+  
+##PREMIUM##
+PRE="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.duration > 0"
+  
+##VIP##
+VIP="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.vip_duration > 0"
+  
+##PRIVATE##
+PRIV="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration > 0"
+  
+Query="SELECT users.user_name FROM users WHERE $PRE OR $VIP OR $PRIV"
+user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
+  
+[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
+  
 EOM
-
-/bin/cat <<"EOM" >/etc/openvpn/script/disconnect.sh
-#!/bin/bash
-. /etc/openvpn/script/config.sh
-##set status offline to user disconnected
-mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE tbl_user SET user_online=0 WHERE username='$common_name'"
-##insert data disconnected to table log
-mysql -h$HOST -P$PORT -u$USER -p$PASS $DB -e "UPDATE log SET log_end_time=now(),log_received='$bytes_received',log_send='$bytes_sent' WHERE log_trusted_ip='$trusted_ip' AND log_trusted_port='$trusted_port' AND user_id='$common_name' AND log_end_time='0000-00-00 00:00:00'"
-
-EOM
-
+  
 echo "";
 echo -e "                $GREEN 1) Premium Selected$RESET";
 break ;;
