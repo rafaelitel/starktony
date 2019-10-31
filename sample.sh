@@ -12,9 +12,9 @@ echo "Example: $0<space><payloadhere>"
 echo
 echo "or execute the command like this."
 echo
-echo "$0 m.facebook.com"
+echo "$0 connect.facebook.net"
 echo
-echo "Note: m.facebook.com payload is example."
+echo "Note: connect.facebook.net payload is example."
 echo
 else
 IPADDRESS=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{print $1}' | head -1`
