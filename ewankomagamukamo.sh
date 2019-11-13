@@ -3,9 +3,9 @@
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 dbhost='185.61.137.168';
-dbuser='tonystar1_tonystarkvpnml';
-dbpass='tonystarkvpnml';
-dbname='tonystar1_tonystark-vpn.ml';
+dbuser='tonystar1_panela';
+dbpass='panela2019';
+dbname='tonystar1_arabopanel';
 cacert='-----BEGIN CERTIFICATE-----
 MIIE5TCCA82gAwIBAgIJAP0GLynOqm38MA0GCSqGSIb3DQEBCwUAMIGnMQswCQYD
 VQQGEwJQSDERMA8GA1UECBMIQmF0YW5nYXMxETAPBgNVBAcTCEJhdGFuZ2FzMRIw
