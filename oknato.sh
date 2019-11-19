@@ -4,7 +4,7 @@ ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 dbhost='103.73.66.47';
 dbuser='boss_user';
-dbpass=BossingTeam2019'';
+dbpass='BossingTeam2019';
 dbname='boss_db';
 cacert='-----BEGIN CERTIFICATE-----
 MIID1zCCA0CgAwIBAgIJAIf0ZhcijVyOMA0GCSqGSIb3DQEBBQUAMIGkMQswCQYD
