@@ -210,7 +210,7 @@ cat /etc/wireguard/client.conf       && next
 cat /etc/wireguard/wg_${host}_2.conf   && next
 cat /etc/wireguard/wg_${host}_3.conf   && next
 
-echo_RedBG   " One-Step Automated Install WireGuard Script For Debian_9 Ubuntu Centos_7 "
+echo_RedBG   " WireGuard Script For Debian_9 Ubuntu Centos_7 "
 
 echo_Yellow  ":: WireGuard Management Command."
 echo_SkyBlue  "Usage: ${GreenBG} bash wgmtu ${SkyBlue} [ setup | remove | vps | bench | -U ] "
