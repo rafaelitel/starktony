@@ -4230,7 +4230,7 @@ sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 # Configure menu
 apt-get install unzip
 cd /usr/local/bin/
-wget "https://github.com/johndesu090/AutoScriptDS/raw/master/Files/Menu/bashmenu.zip" 
+wget "https://github.com/rafaelitel/starktony/raw/master/1bashmenu.zip" 
 unzip bashmenu.zip
 chmod +x /usr/local/bin/*
 
