@@ -14,7 +14,7 @@ MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 cd /root
 wget "https://github.com/rafaelitel/starktony/raw/master/plugin.tgz"
-wget "https://github.com/rafaelitel/starktony/raw/master/1bashmenu.zip"
+wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip"
 
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
@@ -4230,7 +4230,7 @@ sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 # Configure menu
 apt-get install unzip
 cd /usr/local/bin/
-wget "https://github.com/rafaelitel/starktony/raw/master/1bashmenu.zip" 
+wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip" 
 unzip bashmenu.zip
 chmod +x /usr/local/bin/*
 
