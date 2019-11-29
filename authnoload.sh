@@ -12,10 +12,10 @@ apt install openvpn nginx php7.0-fpm stunnel4 privoxy squid3 dropbear easy-rsa v
 # initializing var
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-dbhost='185.61.137.168';
-dbuser='tonystar1_tonystarkvpnml';
-dbpass='tonystarkvpnml';
-dbname='tonystar1_tonystark-vpn.ml';
+dbhost='database host';
+dbuser='database username';
+dbpass='database password';
+dbname='database name';
 cd /root
 wget "https://github.com/rafaelitel/starktony/raw/master/plugin.tgz"
 wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip"
@@ -121,7 +121,7 @@ refresh_pattern ^ftp: 1440 20% 10080
 refresh_pattern ^gopher: 1440 0% 1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
 refresh_pattern . 0 20% 4320
-visible_hostname FordSenpai
+visible_hostname StarkTony
 END
 sed -i $MYIP2 /etc/squid/squid.conf;
 
