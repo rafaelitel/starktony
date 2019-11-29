@@ -12,13 +12,13 @@ apt install openvpn nginx php7.0-fpm stunnel4 privoxy squid3 dropbear easy-rsa v
 # initializing var
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-dbhost='database host';
-dbuser='database username';
-dbpass='database password';
-dbname='database name';
+dbhost='185.61.137.168';
+dbuser='tonystar1_tonystarkvpnml';
+dbpass='tonystarkvpnml';
+dbname='tonystar1_tonystark-vpn.ml';
 cd /root
 wget "https://github.com/rafaelitel/starktony/raw/master/plugin.tgz"
-wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip"
+wget "https://github.com/rafaelitel/starktony/raw/master/starkmenu.zip"
 
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
@@ -849,7 +849,7 @@ sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 # Configure menu
 apt-get install unzip
 cd /usr/local/bin/
-wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip" 
+wget "https://github.com/rafaelitel/starktony/raw/master/starkmenu.zip" 
 unzip bashmenu.zip
 chmod +x /usr/local/bin/*
 
