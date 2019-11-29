@@ -20,7 +20,7 @@ cat > /root/limit.sh <<END3
 END3
 
 cd /usr/local/bin
-wget -O premium-script.tar.gz "https://github.com/rafaelitel/starktony/blob/master/plugin.tgz?raw=true"
+wget -O premium-script.tar.gz "https://github.com/rafaelitel/starktony/raw/master/plugin.tgz"
 tar -xvf premium-script.tar.gz
 rm -f premium-script.tar.gz
 
