@@ -18,7 +18,7 @@ dbpass='tonystarkvpnml';
 dbname='tonystar1_tonystark-vpn.ml';
 cd /root
 wget "https://github.com/rafaelitel/starktony/raw/master/plugin.tgz"
-wget "https://github.com/rafaelitel/starktony/raw/master/starkmenu.zip"
+wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip"
 
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
@@ -849,7 +849,7 @@ sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 # Configure menu
 apt-get install unzip
 cd /usr/local/bin/
-wget "https://github.com/rafaelitel/starktony/raw/master/starkmenu.zip" 
+wget "https://github.com/rafaelitel/starktony/raw/master/bashmenu.zip.zip" 
 unzip bashmenu.zip
 chmod +x /usr/local/bin/*
 
